@@ -47,8 +47,7 @@ class StandaloneApplication(BaseApplication):
 
 
 if __name__ == '__main__':
-    path = os.getcwd()
-    print(path)
-    with open(path+"/src/default-config.json","r") as f:
+    path = os.path.dirname(sys.argv[0])
+    with open(path+"/default-config.json","r") as f:
         config = json.load(f)
         StandaloneApplication(app_pre_process.MyFlask, __name__, config).run()

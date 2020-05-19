@@ -9,5 +9,6 @@ include/
 lib/
 share/
 pyvenv.cfg
+*.spec
 
 .vscode

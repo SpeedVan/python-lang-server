@@ -1,19 +1,16 @@
-from flask import Flask, request, jsonify, abort, g
+import os
+import sys
 import json
 import logging
-
 import jupyter_client
+
+from flask import Flask, request, jsonify, abort, g
 from jupyter_client.manager import start_new_kernel
 from IPython.utils.capture import capture_output
 
 logging.getLogger().setLevel(logging.DEBUG)
 console_logger = logging.getLogger("__debug__")
 km, kc = jupyter_client.manager.start_new_kernel(kernel_name='python3')
-
-import time
-
-time.gmtime
-
 
 class MyFlask(Flask):
     def __init__(self, module, config):
@@ -41,12 +38,8 @@ class MyFlask(Flask):
         return Flask.run(self, host or _host, port or _port, **options)
 
 if __name__ == '__main__':
-    config = {
-        "BIND": "127.0.0.1:8888",
-        "ENV": "dev",
-        "DEBUG": True,
-    }
-    app = MyFlask(__name__, config)
-    # app.config["SERVER_NAME"] = config["BIND"]
-    # print(app.config)
-    app.run()
+    path = os.path.dirname(sys.argv[0])
+    with open(path+"/default-config.json","r") as f:
+        config = json.load(f)
+        app = MyFlask(__name__, config)
+        app.run()
