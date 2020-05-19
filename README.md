@@ -8,10 +8,13 @@ ipykernel
 flask
 gunicorn
 ```
-## localtest
+## local test
 ### Now, only
 python src/app_pre_process.py
 
-### will finish
+### Will finish
 * did not get result through stdout, then "python src/app.py" would be.
 * debug http interface
+
+## design
+![svg](/DESIGN.svg)
