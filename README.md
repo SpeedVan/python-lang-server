@@ -2,15 +2,16 @@
 
 base on https://ipython.readthedocs.io/en/latest/development/how_ipython_works.html#terminal-ipython
 
-python denpendences
-
+python denpendences：
+```
 ipykernel
 flask
 gunicorn
-
-Now, only:
+```
+## localtest
+### Now, only
 python app_pre_process.py
 
-will finish:
+### will finish
 did not get result through stdout, then "python app.py" would be.
 debug http interface
