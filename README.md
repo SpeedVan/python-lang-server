@@ -9,10 +9,33 @@ flask
 gunicorn
 ```
 ## local test
-### Now, only
+```
 python src/app_pre_process.py
+```
+a flask web app will startup.
 
-### Will finish
+## Usage
+interactive url:
+```
+POST /
+```
+body:
+```
+<code>
+```
+response:
+ok:
+```
+200
+<result>
+```
+fail:
+```
+500
+<err>
+```
+
+## Will finish
 * did not get result through stdout, then "python src/app.py" would be.
 * debug http interface
 
