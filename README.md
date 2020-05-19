@@ -10,8 +10,8 @@ gunicorn
 ```
 ## localtest
 ### Now, only
-python app_pre_process.py
+python src/app_pre_process.py
 
 ### will finish
-did not get result through stdout, then "python app.py" would be.
-debug http interface
+* did not get result through stdout, then "python src/app.py" would be.
+* debug http interface
