@@ -5,8 +5,9 @@ dist/
 MANIFEST
 
 bin/
-lib/
 include/
+lib/
+share/
 pyvenv.cfg
 
 .vscode
