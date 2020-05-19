@@ -1,6 +1,8 @@
 # python-lang-server
 
-base on https://ipython.readthedocs.io/en/latest/development/how_ipython_works.html#terminal-ipython
+base on 
+https://ipython.readthedocs.io/en/latest/development/how_ipython_works.html#terminal-ipython
+https://github.com/jupyter/jupyter_client/blob/master/jupyter_client/tests/test_kernelapp.py
 
 python denpendences：
 ```
