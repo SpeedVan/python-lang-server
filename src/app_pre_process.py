@@ -5,6 +5,7 @@ import logging
 import jupyter_client
 
 from flask import Flask, request, jsonify, abort, g
+from flask_cors import CORS
 from jupyter_client.manager import start_new_kernel
 from IPython.utils.capture import capture_output
 
@@ -42,4 +43,5 @@ if __name__ == '__main__':
     with open(path+"/default-config.json","r") as f:
         config = json.load(f)
         app = MyFlask(__name__, config)
+        CORS(app)
         app.run()

@@ -2,6 +2,7 @@ import multiprocessing
 
 from gunicorn.app.base import BaseApplication
 from flask import Flask
+from flask_cors import CORS
 
 import app_pre_process
 
@@ -26,7 +27,9 @@ class StandaloneApplication(BaseApplication):
         self.options = {**self.options, **{key.lower(): value for key, value in config.items() if key.lower() in self.options}}
         print(self.options)
         config.pop("BIND")
-        self.application = application_class(module, config)
+        app = application_class(module, config)
+        CORS(app)
+        self.application = app
         super().__init__()
 
     def load_config(self):

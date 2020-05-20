@@ -8,6 +8,7 @@ python denpendences：
 ```
 ipykernel
 flask
+flask-cors
 gunicorn
 ```
 ## local test
