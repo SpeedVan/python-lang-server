@@ -6,16 +6,13 @@ https://github.com/jupyter/jupyter_client/blob/master/jupyter_client/tests/test_
 
 python denpendences：
 ```
-ipykernel
-flask
-flask-cors
-gunicorn
+pip install ipykernel flask flask-cors gevent gevent-websocket protobuf
 ```
 ## local test
 ```
 python src/app_pre_process.py
 ```
-a flask web app will startup.
+a flask app which base on gevent wsgi will startup.
 
 ## Usage
 interactive url:
@@ -37,6 +34,13 @@ fail:
 500
 <err>
 ```
+websocket url:
+```
+/interactive
+```
+
+## build
+pyinstaller -F src/app_pre_process.py --hidden-import google
 
 ## Will finish
 * did not get result through stdout, then "python src/app.py" would be.

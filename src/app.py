@@ -28,7 +28,6 @@ class StandaloneApplication(BaseApplication):
         print(self.options)
         config.pop("BIND")
         app = application_class(module, config)
-        CORS(app)
         self.application = app
         super().__init__()
 
@@ -53,4 +52,4 @@ if __name__ == '__main__':
     path = os.path.dirname(sys.argv[0])
     with open(path+"/default-config.json","r") as f:
         config = json.load(f)
-        StandaloneApplication(app_pre_process.MyFlask, __name__, config).run()
+        StandaloneApplication(app_pre_process.MyApp, __name__, config).run()

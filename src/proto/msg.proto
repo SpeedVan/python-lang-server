@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Msg {
+    Meta meta = 1;
+    bytes body = 2;
+}
+
+message Meta {
+    Type type = 1;
+    string traceId = 2;
+    map<string, string> header = 3;
+}
+
+enum Type {
+    Interactive_Req = 0;
+    Interactive_ResOK = 1;
+    Interactive_ResERR = 2;
+}
